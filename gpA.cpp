@@ -24,13 +24,16 @@ int main() {
         cout << "Enter cumulative credit hours: ";
         cin >> cumulativeCredits;
     }
+
     // Get course information from the user
+    addAnother = 'y';
+    cout << "Current GPA data collection: " << endl;
     while (numCourses < maxCourses && (addAnother == 'y' || addAnother == 'Y')) {
         cout << "Enter course name: ";
         cin >> courseNames[numCourses];
         cout << "Enter number of credit hours: ";
         cin >> credit[numCourses];
-        cout << "Enter grade (A, A-, B+, B, B-, C+, C, C-, D, F): ";
+        cout << "Enter grade in caps (A, A-, B+, B, B-, C+, C, C-, D, F): ";
         cin >> gradeString[numCourses];
 
         // Convert grade to numeric value
