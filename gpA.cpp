@@ -17,8 +17,7 @@ int main() {
     // Get cumulative gpa
     cout << "Do you have a cumulative GPA? (y/n): ";
     cin >> addAnother;
-    if (addAnother == 'y' || addAnother == 'Y')
-    {
+    if (addAnother == 'y' || addAnother == 'Y'){
         cout << "Enter cumulative GPA: ";
         cin >> cumulativeGpa;
         cout << "Enter cumulative credit hours: ";
@@ -27,7 +26,7 @@ int main() {
 
     // Get course information from the user
     addAnother = 'y';
-    cout << "Current GPA data collection: " << endl;
+    cout << "Alright proceeding with current GPA data collection." << endl;
     while (numCourses < maxCourses && (addAnother == 'y' || addAnother == 'Y')) {
         cout << "Enter course name: ";
         cin >> courseNames[numCourses];
