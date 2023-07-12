@@ -17,7 +17,8 @@ int main() {
     // Get cumulative gpa
     cout << "Do you have a cumulative GPA? (y/n): ";
     cin >> addAnother;
-    if (addAnother == 'y' || addAnother == 'Y'){
+    if (addAnother == 'y' || addAnother == 'Y')
+    {
         cout << "Enter cumulative GPA: ";
         cin >> cumulativeGpa;
         cout << "Enter cumulative credit hours: ";
@@ -25,46 +26,47 @@ int main() {
     }
 
     // Get course information from the user
-    addAnother = 'y';
-    cout << "Alright proceeding with current GPA data collection." << endl;
     while (numCourses < maxCourses && (addAnother == 'y' || addAnother == 'Y')) {
         cout << "Enter course name: ";
         cin >> courseNames[numCourses];
         cout << "Enter number of credit hours: ";
         cin >> credit[numCourses];
-        cout << "Enter grade in caps (A, A-, B+, B, B-, C+, C, C-, D, F): ";
+        if (credit[numCourses] < 0) {
+            cout << "Invalid number of credit hours entered. Please try again." << endl;
+            continue;
+        }
+        cout << "Enter grade (A, A-, B+, B, B-, C+, C, C-, D, F): ";
         cin >> gradeString[numCourses];
-
         // Convert grade to numeric value
         double grade = 0.0;
-        if (gradeString[numCourses] == "A") {
+        if (gradeString[numCourses] == "A" || gradeString[numCourses] == "a") {
             grade = 4.0;
         }
-        else if (gradeString[numCourses] == "A-") {
+        else if (gradeString[numCourses] == "A-" || gradeString[numCourses] == "a-") {
             grade = 3.67;
         }
-        else if (gradeString[numCourses] == "B+") {
+        else if (gradeString[numCourses] == "B+" || gradeString[numCourses] == "b+") {
             grade = 3.33;
         }
-        else if (gradeString[numCourses] == "B") {
+        else if (gradeString[numCourses] == "B" || gradeString[numCourses] == "b") {
             grade = 3.0;
         }
-        else if (gradeString[numCourses] == "B-") {
+        else if (gradeString[numCourses] == "B-" || gradeString[numCourses] == "b-") {
             grade = 2.67;
         }
-        else if (gradeString[numCourses] == "C+") {
+        else if (gradeString[numCourses] == "C+" || gradeString[numCourses] == "c+") {
             grade = 2.33;
         }
-        else if (gradeString[numCourses] == "C") {
+        else if (gradeString[numCourses] == "C" || gradeString[numCourses] == "c") {
             grade = 2.0;
         }
-        else if (gradeString[numCourses] == "C-") {
+        else if (gradeString[numCourses] == "C-" || gradeString[numCourses] == "c-") {
             grade = 1.67;
         }
-        else if (gradeString[numCourses] == "D") {
+        else if (gradeString[numCourses] == "D" || gradeString[numCourses] == "d") {
             grade = 1.0;
         }
-        else if (gradeString[numCourses] == "F") {
+        else if (gradeString[numCourses] == "F" || gradeString[numCourses] == "f") {
             grade = 0.0;
         }
         else {
@@ -98,6 +100,5 @@ int main() {
         }
         cout << endl << "GPA: " << gpa << endl;
     }
-
     return 0;
 }
