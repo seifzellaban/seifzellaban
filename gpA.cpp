@@ -1,4 +1,5 @@
 #include <iostream>
+#include <fstream>
 #include <string>
 
 using namespace std;
@@ -12,7 +13,16 @@ int main() {
     double totalCredits = 0.0, cumulativeCredits = 0.0;
     double totalGradePoints = 0.0, cumulativeGpa = 0.0;
     char addAnother = 'y';
-    cout << "GRADE CALCULATOR ON A 4 POINT GPA SYSTEM." << endl << endl;
+    double gpa = 0.0;
+    string filename = "gpa.txt";
+
+    // Load previous GPA from file if available
+    ifstream infile(filename);
+    if (infile.is_open()) {
+        infile >> gpa;
+        cout << "Your Last Calculated GPA is: " << gpa << endl << endl;
+        infile.close();
+    }
 
     // Get cumulative gpa
     cout << "Do you have a cumulative GPA? (y/n): ";
@@ -24,6 +34,7 @@ int main() {
         cout << "Enter cumulative credit hours: ";
         cin >> cumulativeCredits;
     }
+    addAnother = 'y';
 
     // Get course information from the user
     while (numCourses < maxCourses && (addAnother == 'y' || addAnother == 'Y')) {
@@ -89,7 +100,6 @@ int main() {
         cout << "No courses entered. GPA cannot be calculated." << endl;
     }
     else {
-        double gpa = 0.0;
         if (cumulativeCredits != 0)
         {
             gpa = (totalGradePoints + (cumulativeGpa * cumulativeCredits)) / (totalCredits + cumulativeCredits);
@@ -99,6 +109,14 @@ int main() {
             gpa = (totalGradePoints / totalCredits);
         }
         cout << endl << "GPA: " << gpa << endl;
+
+        // Save GPA to file
+        ofstream outfile(filename);
+        if (outfile.is_open()) {
+            outfile << gpa;
+            outfile.close();
+        }
     }
     return 0;
 }
+        
