@@ -1,5 +1,4 @@
 #include <iostream>
-#include <fstream>
 #include <string>
 
 using namespace std;
@@ -13,41 +12,54 @@ int main() {
     double totalCredits = 0.0, cumulativeCredits = 0.0;
     double totalGradePoints = 0.0, cumulativeGpa = 0.0;
     char addAnother = 'y';
-    double gpa = 0.0;
-    string filename = "gpa.txt";
+    cout << "GRADE CALCULATOR ON A 4 POINT GPA SYSTEM." << endl << endl;
 
-    // Load previous GPA from file if available
-    ifstream infile(filename);
-    if (infile.is_open()) {
-        infile >> gpa;
-        cout << "Your Last Calculated GPA is: " << gpa << endl << endl;
-        infile.close();
-    }
 
     // Get cumulative gpa
     cout << "Do you have a cumulative GPA? (y/n): ";
     cin >> addAnother;
     if (addAnother == 'y' || addAnother == 'Y')
     {
-        cout << "Enter cumulative GPA: ";
-        cin >> cumulativeGpa;
-        cout << "Enter cumulative credit hours: ";
-        cin >> cumulativeCredits;
+        do {
+            cout << "Enter cumulative GPA: ";
+            cin >> cumulativeGpa;
+            if (cumulativeGpa < 0) {
+                cout << "Invalid GPA entered. Please try again." << endl;
+            }
+        } while (cumulativeGpa < 0);
+        do {
+            cout << "Enter cumulative credit hours: ";
+            cin >> cumulativeCredits;
+            if (cumulativeCredits < 0) {
+                cout << "Invalid number of credit hours entered. Please try again." << endl;
+            }
+        } while (cumulativeCredits < 0);
     }
-    addAnother = 'y';
 
-    // Get course information from the user
+
+        // Get course information from the user
     while (numCourses < maxCourses && (addAnother == 'y' || addAnother == 'Y')) {
         cout << "Enter course name: ";
-        cin >> courseNames[numCourses];
-        cout << "Enter number of credit hours: ";
-        cin >> credit[numCourses];
-        if (credit[numCourses] < 0) {
-            cout << "Invalid number of credit hours entered. Please try again." << endl;
-            continue;
+        cin.ignore(); // Ignore the newline character in the input buffer
+        getline(cin, courseNames[numCourses]);
+
+        while(true) {
+            cout << "Enter number of credit hours: ";
+            cin >> credit[numCourses];
+           if(!cin) { // If the input was not an integer
+                cout << "Invalid number of credit hours entered. Please try again." << endl;
+               cin.clear(); // Clear the error state of the cin
+               cin.ignore(numeric_limits<streamsize>::max(), '\n'); // Ignore the remainder of the line
+            }
+           else if(credit[numCourses] < 0) { // If the input was a negative integer
+                cout << "Invalid number of credit hours entered. Please try again." << endl;
+            }
+            else break; 
         }
         cout << "Enter grade (A, A-, B+, B, B-, C+, C, C-, D, F): ";
         cin >> gradeString[numCourses];
+
+
         // Convert grade to numeric value
         double grade = 0.0;
         if (gradeString[numCourses] == "A" || gradeString[numCourses] == "a") {
@@ -85,21 +97,25 @@ int main() {
             continue;
         }
 
+
         // Update GPA calculation variables
         totalCredits += credit[numCourses];
         totalGradePoints += grade * credit[numCourses];
         numCourses++;
+
 
         // Ask if user wants to add another course
         cout << "Add another course? (y/n): ";
         cin >> addAnother;
     }
 
+
     // Calculate and display GPA
     if (numCourses == 0) {
         cout << "No courses entered. GPA cannot be calculated." << endl;
     }
     else {
+        double gpa = 0.0;
         if (cumulativeCredits != 0)
         {
             gpa = (totalGradePoints + (cumulativeGpa * cumulativeCredits)) / (totalCredits + cumulativeCredits);
@@ -109,14 +125,6 @@ int main() {
             gpa = (totalGradePoints / totalCredits);
         }
         cout << endl << "GPA: " << gpa << endl;
-
-        // Save GPA to file
-        ofstream outfile(filename);
-        if (outfile.is_open()) {
-            outfile << gpa;
-            outfile.close();
-        }
     }
     return 0;
 }
-        
