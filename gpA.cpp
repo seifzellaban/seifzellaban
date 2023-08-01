@@ -1,6 +1,6 @@
 #include <iostream>
 #include <string>
-
+#include <limits>
 using namespace std;
 
 int main() {
@@ -36,8 +36,8 @@ int main() {
         } while (cumulativeCredits < 0);
     }
 
-
-        // Get course information from the user
+    cout << "Now Lets Gather Scores: \n";
+    // Get course information from the user
     while (numCourses < maxCourses && (addAnother == 'y' || addAnother == 'Y')) {
         cout << "Enter course name: ";
         cin.ignore(); // Ignore the newline character in the input buffer
