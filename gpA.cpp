@@ -1,9 +1,11 @@
 #include <iostream>
 #include <string>
 #include <limits>
+#include <fstream>
 using namespace std;
 
 int main() {
+    // Declarations
     const int maxCourses = 100;
     string courseNames[maxCourses];
     int credit[maxCourses];
@@ -11,12 +13,23 @@ int main() {
     int numCourses = 0;
     double totalCredits = 0.0, cumulativeCredits = 0.0;
     double totalGradePoints = 0.0, cumulativeGpa = 0.0;
+    double gpa = 0.0;
     char addAnother = 'y';
+
+
+    // Program Start
     cout << "GRADE CALCULATOR ON A 4 POINT GPA SYSTEM." << endl << endl;
+    double gpaFromFile = 0.0;
+    ifstream inputFile("gpa.txt");
+    if (inputFile) {
+        inputFile >> gpaFromFile;
+        inputFile.close();
+        cumulativeGpa = gpaFromFile;
+    }
 
 
     // Get cumulative gpa
-    cout << "Do you have a cumulative GPA? (y/n): ";
+    cout << "Current cumulative GPA value is " << cumulativeGpa << " do you want to edit? (y/n): ";
     cin >> addAnother;
     if (addAnother == 'y' || addAnother == 'Y')
     {
@@ -34,10 +47,13 @@ int main() {
                 cout << "Invalid number of credit hours entered. Please try again." << endl;
             }
         } while (cumulativeCredits < 0);
+        cin.ignore();
     }
 
+
     cout << "Now Lets Gather Scores: \n";
-    // Get course information from the user
+    addAnother = 'y';
+        // Get course information from the user
     while (numCourses < maxCourses && (addAnother == 'y' || addAnother == 'Y')) {
         cout << "Enter course name: ";
         cin.ignore(); // Ignore the newline character in the input buffer
@@ -48,8 +64,8 @@ int main() {
             cin >> credit[numCourses];
            if(!cin) { // If the input was not an integer
                 cout << "Invalid number of credit hours entered. Please try again." << endl;
-               cin.clear(); // Clear the error state of the cin
-               cin.ignore(numeric_limits<streamsize>::max(), '\n'); // Ignore the remainder of the line
+                cin.clear(); // Clear the error state of the cin
+                cin.ignore(numeric_limits<streamsize>::max(), '\n'); // Ignore the remainder of the line
             }
            else if(credit[numCourses] < 0) { // If the input was a negative integer
                 cout << "Invalid number of credit hours entered. Please try again." << endl;
@@ -115,7 +131,6 @@ int main() {
         cout << "No courses entered. GPA cannot be calculated." << endl;
     }
     else {
-        double gpa = 0.0;
         if (cumulativeCredits != 0)
         {
             gpa = (totalGradePoints + (cumulativeGpa * cumulativeCredits)) / (totalCredits + cumulativeCredits);
@@ -126,5 +141,11 @@ int main() {
         }
         cout << endl << "GPA: " << gpa << endl;
     }
+
+
+    // Write the calculated GPA to a file
+    ofstream outputFile("gpa.txt");
+    outputFile << gpa;
+    outputFile.close();
     return 0;
 }
