@@ -32,6 +32,6 @@ I've been rocking the software engineering student life for 3 years, and during 
 <hr>
 
 # 📊 GitHub Stats:
-![](https://github-readme-streak-stats.herokuapp.com/?user=seifzellaban&theme=great-gatsby&hide_border=false)
-![](https://github-readme-stats.vercel.app/api/top-langs/?username=seifzellaban&theme=great-gatsby&hide_border=false&include_all_commits=true&count_private=true&layout=compact)<br/>
 ![](https://github-readme-stats.vercel.app/api?username=seifzellaban&theme=great-gatsby&hide_border=false&include_all_commits=true&count_private=true)
+![](https://github-readme-stats.vercel.app/api/top-langs/?username=seifzellaban&theme=great-gatsby&hide_border=false&include_all_commits=true&count_private=true&layout=compact)<br/>
+![](https://github-readme-streak-stats.herokuapp.com/?user=seifzellaban&theme=great-gatsby&hide_border=false)
