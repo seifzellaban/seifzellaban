@@ -1,5 +1,5 @@
 # 💫 About Me:
-Hello! 👋 I'm Seif Zakaria, a Computer Science student at Ain Shams University who's passionate about building bridges between tech and people. Currently leading HR at the Open Source Community, I combine my love for MERN stack development and Next.js with strong community leadership. I'm always excited about exploring new technologies, especially LLMs, while helping others grow in their tech journey. When I'm not coding or managing teams, you'll find me mentoring and fostering community growth.
+Hello! 👋 I'm Seif Zakaria, a Computer Science student at Ain Shams University who's passionate about building bridges between tech and people. Currently leading HR at the Open Source Community, I combine my love for MERN stack development and Next.js with strong community leadership. I'm always excited about exploring new technologies, especially LLMs, while helping others grow in their tech journey. When I'm not coding or managing teams, you'll find me playing gta online or trying not to think of that bug.
 
 
 ## 🌐 Socials:
