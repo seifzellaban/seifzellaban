@@ -1,6 +1,5 @@
 # 💫 About Me:
-Hello! 👋 I'm Seif Zakaria, a Computer Science student at Ain Shams University who's passionate about building bridges between tech and people. Currently leading HR at the Open Source Community, I combine my love for MERN stack development and Next.js with strong community leadership. I'm always excited about exploring new technologies, especially LLMs, while helping others grow in their tech journey. When I'm not coding or managing teams, you'll find me playing gta online or trying not to think of that bug.
-
+Hey! I'm Seif Zakaria. I'm a full-stack developer based in Cairo, Egypt who ships fast and obsesses over the details. I lead the AI & Resonance committee at Microsoft Student Partners ASU, mentor developers, and build with Next.js daily. My background in leading HR teams gave me something most engineers lack: the ability to truly understand what users need before writing a single line of code.
 
 ## 🌐 Socials:
 [![LinkedIn](https://img.shields.io/badge/LinkedIn-%230077B5.svg?logo=linkedin&logoColor=white)](https://linkedin.com/in/seifzellaban) [![X](https://img.shields.io/badge/X-black.svg?logo=X&logoColor=white)](https://x.com/seifzellaban) [![YouTube](https://img.shields.io/badge/YouTube-%23FF0000.svg?logo=YouTube&logoColor=white)](https://youtube.com/@seifzellaban) 
