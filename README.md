@@ -1,6 +1,6 @@
 # Hey, I'm Seif Zakaria 👋
 
-Full-stack engineer based in Cairo. I co-founded [Masons](https://wearemasons.com) — a pre-seed AI software studio — at 16, in a coffee shop at 2AM. We're still building.
+Full-stack engineer based in Cairo. I co-founded [Masons](https://wearemasons.com) — a pre-seed AI software studio — at 17, in a coffee shop at 2AM. We're still building.
 
 Currently shipping **[Rafiqi](https://rafiqi.wearemasons.com)**, an LLM-powered mental health platform built for Egyptians. Also built **[AgencyKit](https://agencykit-eight.vercel.app)** (agency SaaS), **[Umbra](https://umbra.wearemasons.com)** (semantic search over 608 NASA papers), and **[Organum](https://github.com/seifzellaban/organum)** — a real-time pipe organ synthesizer built from scratch using additive synthesis and physically modeled pipe acoustics. No samples. Pure math.
 
