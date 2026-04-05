@@ -2,15 +2,15 @@
 
 Full-stack engineer based in Cairo. I co-founded [Masons](https://wearemasons.com) — a pre-seed AI software studio — at 17, in a coffee shop at 2AM. We're still building.
 
-Currently shipping **[Rafiqi](https://rafiqi.wearemasons.com)**, an LLM-powered mental health platform built for Egyptians. Also built **[AgencyKit](https://agencykit-eight.vercel.app)** (agency SaaS), **[Umbra](https://umbra.wearemasons.com)** (semantic search over 608 NASA papers), and **[Organum](https://github.com/seifzellaban/organum)** — a real-time pipe organ synthesizer built from scratch using additive synthesis and physically modeled pipe acoustics. No samples. Pure math.
+Currently shipping **[Rafiqi](https://rafiqi.wearemasons.com)**, an LLM-powered mental health platform built for Egyptians. Also built **[AgencyKit](https://agencykit-eight.vercel.app)** (agency SaaS), **[Umbra](https://umbra.wearemasons.com)** (semantic search over 608 NASA papers), and **[Organum](https://github.com/seifzellaban/organum)**, a real-time pipe organ synthesizer built from scratch using additive synthesis and physically modeled pipe acoustics. No samples. Pure math.
 
-Outside of product work, I lead the AI & Resonance committee at Microsoft Student Partners ASU and I'm founding **BLVCKPRINT** — a cross-collegiate student org designed to actually ship things instead of running bureaucratic committees.
+Outside of product work, I lead the AI & Resonance committee at Microsoft Student Partners ASU.
 
 My background leading HR teams for 130+ people gave me something most engineers don't have: I know how to read a room before I write a line of code.
 
 ---
 
-## 🛠️ Tech Stack
+## Tech Stack
 
 | **Category** | **Technologies** |
 |---|---|
@@ -23,7 +23,7 @@ My background leading HR teams for 130+ people gave me something most engineers 
 
 ---
 
-## 🌐 Find me
+## Find me
 
 [![LinkedIn](https://img.shields.io/badge/LinkedIn-%230077B5.svg?logo=linkedin&logoColor=white)](https://linkedin.com/in/seifzellaban)
 [![X](https://img.shields.io/badge/X-black.svg?logo=X&logoColor=white)](https://x.com/seifzellaban)
